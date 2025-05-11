@@ -1,0 +1,28 @@
+#fixed 
+initialize window_sum = 0
+initialize max_result (or other required value)
+# Set up the initial window
+for i from to k-1:
+    window_sum += arr[i]
+max_result = window_sum # Initialize result
+# Slide the window across the array
+for i from k to arr.length-1:
+    window_sum+=arr[i]-arr[i-k]#add_new_element
+    # Remove the element going out of the window
+    update max-result (or other computation)
+return max_result (or other requxred value)
+
+#dynamic
+initialize left = 0
+initialize window_state (sum, count,frequency map, etc.)
+initialize min_or_max_result
+
+for right from 0 to arr.length-1:
+    update window_state to include arrt[right] # Expand the window
+
+    while window-state violates the condition:
+        update min_or_max_result (if needed)
+        update window_state to exclude arr[left]
+        move left pointer forward
+    # Shrink the window
+return min_or_max_result
